@@ -19,7 +19,8 @@ export class AuthenticationService {
     return this.http.post(`${ServerUtil.getInstance().getServerUrl() + this.loginUrl}`, {email: email, password: password});
   }
 
-  adminExist(): Observable<any>{
-    return this.http.get(`${ServerUtil.getInstance().getServerUrl() + this.checkAdminUrl}`);
+  adminExist(){
+    const result = this.http.get(`${ServerUtil.getInstance().getServerUrl() + this.checkAdminUrl}`);
+    return result.toPromise();
   }
 }

@@ -1,1 +1,80 @@
-<p>first-user works!</p>
+<div class="page sabc-theme">
+  <div class="content">
+    <div class="banner">
+      <div class="d-flex justify-content-center">
+        <div class="img">
+          <img src="../../../assets/logo_groupe_sabc_hd.png" height="80px" alt="Logo SABC">
+        </div>
+      </div>
+    </div>
+
+    <div class="form-widget">
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit($event)">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="form-item">
+              <label class="label" for="firstname">Nom <span class="required">*</span></label>
+              <div class="custom-input">
+                <input class="form-input" type="text" placeholder="Nom" id="firstname" formControlName="firstname">
+                <i class="error fa fa-ban text-danger" *ngIf="registerForm.get('email').touched && registerForm.get('firstname').invalid"></i>
+              </div>
+              <span class="input-error text-danger" *ngIf="registerForm.get('email').touched && registerForm.get('firstname').hasError('required')">This field is required</span>
+            </div>
+            <div class="form-item">
+              <label class="label" for="lastname">Prenom</label>
+              <div class="custom-input">
+                <input class="form-input" type="text" placeholder="Prenom" id="lastname" formControlName="lastname">
+              </div>
+            </div>
+            <div class="form-item">
+              <label class="label" for="bornon">Date de naissance <span class="required">*</span></label>
+              <div class="custom-input">
+                <input class="form-input" type="date" placeholder="Date de naissance" id="bornon" formControlName="bornon">
+                <i class="error fa fa-ban text-danger" *ngIf="registerForm.get('bornon').touched && registerForm.get('bornon').invalid"></i>
+              </div>
+              <span class="input-error text-danger" *ngIf="registerForm.get('bornon').touched && registerForm.get('bornon').hasError('required')">This field is required</span>
+            </div>
+            <div class="form-item">
+              <label class="label" for="cni">CNI <span class="required">*</span></label>
+              <div class="custom-input">
+                <input class="form-input" type="text" placeholder="CNI" id="cni" formControlName="cni">
+                <i class="error fa fa-ban text-danger" *ngIf="registerForm.get('cni').touched && registerForm.get('cni').invalid"></i>
+              </div>
+              <span class="input-error text-danger" *ngIf="registerForm.get('cni').touched && registerForm.get('cni').hasError('required')">This field is required</span>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="form-item">
+              <label class="label" for="email">E-mail</label>
+              <div class="custom-input">
+                <input class="form-input" type="email" placeholder="E-mail" id="email" formControlName="email">
+                <i class="error fa fa-ban text-danger" *ngIf="registerForm.get('email').touched && registerForm.get('email').invalid"></i>
+              </div>
+              <span class="input-error text-danger" *ngIf="registerForm.get('email').touched && registerForm.get('email').hasError('required')">This field is required</span>
+              <span class="input-error text-danger" *ngIf="registerForm.get('email').touched && registerForm.get('email').hasError('email')">Invalid e-mail</span>
+            </div>
+            <div class="form-item">
+              <label class="label" for="password">Password</label>
+              <div class="custom-input">
+                <input class="form-input" type="password" id="password" placeholder="Password" formControlName="password">
+                <i class="error fa fa-ban text-danger" *ngIf="registerForm.get('password').touched && registerForm.get('password').invalid"></i>
+              </div>
+              <span class="input-error text-danger" *ngIf="registerForm.get('password').touched && registerForm.get('password').hasError('required')">This field is required</span>
+            </div>
+            <div class="form-item">
+              <label class="label" for="confirmpassword">Confirmer votre mot de passe</label>
+              <div class="custom-input">
+                <input class="form-input" type="password" id="confirmpassword" placeholder="Confirmer votre mot de passe" formControlName="confirmpassword">
+                <i class="error fa fa-ban text-danger" *ngIf="registerForm.get('confirmpassword').touched && registerForm.get('confirmpassword').invalid"></i>
+              </div>
+              <span class="input-error text-danger" *ngIf="registerForm.get('confirmpassword').touched && registerForm.get('confirmpassword').hasError('required')">This field is required</span>
+            </div>
+          </div>
+        </div>
+        <div class="d-flex justify-content-center">
+          <button class="btn btn-primary">Enregister</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

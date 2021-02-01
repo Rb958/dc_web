@@ -30,14 +30,8 @@ export class LoginComponent implements OnInit {
       password: ['', Validators.required]
     });
 
-    this.AuthService.adminExist().subscribe(
-      response => {
-        this.hasAdmin = response.result;
-      },
-      error => {
-
-      }
-    );
+    // @ts-ignore
+    this.AuthService.adminExist().then(result => {this.hasAdmin = result.result;})
   }
 
   onSubmit(event) {
@@ -57,6 +51,6 @@ export class LoginComponent implements OnInit {
   }
 
   onOpenRegister() {
-    this.router.navigate(['/account/first-user']);
+    this.router.navigateByUrl('/account/first-user');
   }
 }

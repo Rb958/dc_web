@@ -52,73 +52,73 @@
   }
 
   .form-widget{
-      border: 1px solid rgba(0,0,0,0.1);
-      width: 400px;
-      background-color: rgba(255,255,255,0.7);
-      @include filter-blur(30px);
-      padding: 20px;
-      left: calc(50% - 400px / 2);
-      position: relative;
-      top: 50px;
-      border-radius: 5px;
-      box-shadow: 3px 3px 6px rgba(0,0,0,0.16);
-      font-size: 14px;
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 400px;
+    background-color: rgba(255,255,255,0.7);
+    @include filter-blur(30px);
+    padding: 20px;
+    left: calc(50% - 400px / 2);
+    position: relative;
+    top: 50px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 6px rgba(0,0,0,0.16);
+    font-size: 14px;
 
-      .form-item{
-        margin-bottom: 20px;
+    .form-item{
+      margin-bottom: 20px;
 
-        .label{
-          display: block;
+      .label{
+        display: block;
+        font-size: 16px;
+      }
+
+      .custom-input{
+        border: 1px solid silver;
+        background-color: rgba(255, 255, 255, 0.7);
+        height: 35px;
+        text-indent: 5px;
+        border-radius: 3px;
+        font-size: 13px;
+        width: 100%;
+        position: relative;
+
+        .fa, .fab,.fas{
           font-size: 16px;
         }
 
-        .custom-input{
-          border: 1px solid silver;
-          background-color: rgba(255, 255, 255, 0.7);
-          height: 35px;
-          text-indent: 5px;
-          border-radius: 3px;
-          font-size: 13px;
-          width: 100%;
-          position: relative;
-
-          .fa, .fab,.fas{
-            font-size: 16px;
+        input{
+          border: 1px solid transparent;
+          background-color: transparent;
+          width: 93%;
+          text-indent: 8px;
+          height: 33px;
+          &:focus{
+            outline: none;
           }
-
-          input{
-            border: 1px solid transparent;
+          // Only for Chrome browser
+          &:-internal-autofill-selected{
             background-color: transparent;
-            width: 93%;
-            text-indent: 8px;
-            height: 33px;
-            &:focus{
-              outline: none;
-            }
-            // Only for Chrome browser
-            &:-internal-autofill-selected{
-              background-color: transparent;
-            }
-          }
-
-          .error{
-            position: absolute;
-            right: 5px;
-            top: calc(50% - 15px / 2);
           }
         }
 
-        .input-error{
-          font-size: 11px;
-          line-height: 0.5px;
-          letter-spacing: 0.6px;
-        }
-
-        a{
-          color: $primary;
+        .error{
+          position: absolute;
+          right: 5px;
+          top: calc(50% - 15px / 2);
         }
       }
+
+      .input-error{
+        font-size: 11px;
+        line-height: 0.5px;
+        letter-spacing: 0.6px;
+      }
+
+      a{
+        color: $primary;
+      }
     }
+  }
 }
 
 
