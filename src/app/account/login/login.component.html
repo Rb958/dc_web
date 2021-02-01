@@ -1,32 +1,42 @@
-<div class="content">
-  <div class="form-widget">
-  <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
-    <div class="form-item">
-      <label class="label" for="email">E-mail</label>
-      <div class="custom-input">
-        <i class="fa fa-user"></i>
-        <input class="form-input" type="email" placeholder="E-mail" id="email" formControlName="email">
-        <i class="error fa fa-ban text-danger" *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid"></i>
+<div class="page sabc-theme">
+  <div class="content">
+    <div class="banner">
+      <div class="d-flex flex-column justify-content-center align-content-center">
+        <div class="img d-flex justify-content-center">
+          <img src="../../../assets/logo_groupe_sabc_hd.png" alt="Logo SABC">
+        </div>
+        <h4>Digital Champions Administrator Interface</h4>
       </div>
-      <span class="input-error text-danger" *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('required')">This field is required</span>
-      <span class="input-error text-danger" *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('email')">Invalid e-mail</span>
     </div>
-    <div class="form-item">
-      <label class="label" for="password">Password</label>
-      <div class="custom-input">
-        <i class="fa fa-lock"></i>
-        <input class="form-input" type="password" id="password" placeholder="Password" formControlName="password">
-        <i class="error fa fa-ban text-danger" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid"></i>
+    <div class="form-widget">
+      <form autocomplete="off" [formGroup]="loginForm" (ngSubmit)="onSubmit($event)">
+        <div class="form-item">
+          <label class="label" for="email">E-mail</label>
+          <div class="custom-input">
+            <i class="fa fa-user"></i>
+            <input class="form-input" type="email" placeholder="E-mail" id="email" formControlName="email">
+            <i class="error fa fa-ban text-danger" *ngIf="loginForm.get('email').touched && loginForm.get('email').invalid"></i>
+          </div>
+          <span class="input-error text-danger" *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('required')">This field is required</span>
+          <span class="input-error text-danger" *ngIf="loginForm.get('email').touched && loginForm.get('email').hasError('email')">Invalid e-mail</span>
+        </div>
+        <div class="form-item">
+          <label class="label" for="password">Password</label>
+          <div class="custom-input">
+            <i class="fa fa-lock"></i>
+            <input class="form-input" type="password" id="password" placeholder="Password" formControlName="password">
+            <i class="error fa fa-ban text-danger" *ngIf="loginForm.get('password').touched && loginForm.get('password').invalid"></i>
+          </div>
+          <span class="input-error text-danger" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">This field is required</span>
+        </div>
+        <div class="form-item d-flex justify-content-between">
+          <a routerLink="/account/recover">I forgot my password</a>
+          <button type="submit" class="btn btn-primary">Connection</button>
+        </div>
+      </form>
+      <div *ngIf="!hasAdmin" class="d-flex justify-content-center">
+        <button class="btn btn-secondary" (click)="onOpenRegister()">Create First user</button>
       </div>
-      <span class="input-error text-danger" *ngIf="loginForm.get('password').touched && loginForm.get('password').hasError('required')">This field is required</span>
     </div>
-    <div class="form-item d-flex justify-content-between">
-      <a routerLink="/account/recover">I forgot my password</a>
-      <button type="submit" class="btn btn-primary">Connection</button>
-    </div>
-  </form>
-  <div *ngIf="!hasAdmin" class="d-flex justify-content-center">
-    <button class="btn btn-success" (click)="onOpenRegister()">Create First user</button>
-  </div>
   </div>
 </div>
