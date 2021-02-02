@@ -40,6 +40,7 @@ export class LoginComponent implements OnInit {
         response => {
           this.notifier.notify("Successfully Authenticated",this.TAG,NotificationType.SUCCESS)
           this.ts.saveToken(response.token);
+          this.router.navigateByUrl('/home');
         },
         error => {
           this.notifier.notify('Wrong password or e-mail', this.TAG ,NotificationType.ERROR)

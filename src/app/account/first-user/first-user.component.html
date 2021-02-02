@@ -26,14 +26,14 @@
                 <input class="form-input" type="text" placeholder="Prenom" id="lastname" formControlName="lastname">
               </div>
             </div>
-            <div class="form-item">
-              <label class="label" for="bornon">Date de naissance <span class="required">*</span></label>
-              <div class="custom-input">
-                <input class="form-input" type="date" placeholder="Date de naissance" id="bornon" formControlName="bornon">
-                <i class="error fa fa-ban text-danger" *ngIf="registerForm.get('bornon').touched && registerForm.get('bornon').invalid"></i>
-              </div>
-              <span class="input-error text-danger" *ngIf="registerForm.get('bornon').touched && registerForm.get('bornon').hasError('required')">This field is required</span>
-            </div>
+<!--            <div class="form-item">-->
+<!--              <label class="label" for="bornon">Date de naissance <span class="required">*</span></label>-->
+<!--              <div class="custom-input">-->
+<!--                <input class="form-input" type="date" placeholder="Date de naissance" id="bornon" formControlName="bornon">-->
+<!--                <i class="error fa fa-ban text-danger" *ngIf="registerForm.get('bornon').touched && registerForm.get('bornon').invalid"></i>-->
+<!--              </div>-->
+<!--              <span class="input-error text-danger" *ngIf="registerForm.get('bornon').touched && registerForm.get('bornon').hasError('required')">This field is required</span>-->
+<!--            </div>-->
             <div class="form-item">
               <label class="label" for="cni">CNI <span class="required">*</span></label>
               <div class="custom-input">

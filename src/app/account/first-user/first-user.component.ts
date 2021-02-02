@@ -26,7 +26,7 @@ export class FirstUserComponent implements OnInit {
     this.registerForm = this.fb.group({
       firstname: ['', Validators.required],
       lastname: [''],
-      bornon: ['', Validators.required],
+      // bornon: ['', Validators.required],
       cni: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
