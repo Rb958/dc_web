@@ -1,0 +1,48 @@
+.top-bar{
+  border: 1px solid silver;
+  height: 60px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.3);
+  background-color: #FFCD27;
+  padding: 5px 10px;
+
+  .title {
+    img {
+      width: 40px;
+      margin-right: 10px;
+    }
+
+    h3{
+      display: block;
+      position: relative;
+      top: calc(50% - 30px / 2);
+      font-size: 25px;
+      color: #FB2C43;
+    }
+  }
+
+  .user-details{
+    width: fit-content;
+    font-size: 30px;
+    color: #FB2C43;
+
+    .username{
+      font-size: 15px;
+      margin-right: 20px;
+      position: relative;
+      top: calc(50% - 60px / 2);
+    }
+    .btn-logout{
+      border: 1px solid transparent;
+      background-color: #FB2C43;
+      color: white;
+      display: inline-block;
+      font-size: 20px;
+      padding: 5px 10px;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      text-align: center;
+      cursor: pointer;
+    }
+  }
+}

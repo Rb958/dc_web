@@ -17,6 +17,11 @@ const routes: Routes = [
     loadChildren: () => import('./account/account.module').then(module => module.AccountModule)
   },
   {
+    path: "home",
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule),
+    canActivate: [AuthGuard]
+  },
+  {
     path: "not-found",
     component: NotFoundComponent
   },

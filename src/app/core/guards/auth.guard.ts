@@ -1,5 +1,16 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, CanActivateChild, CanDeactivate, CanLoad, Route, UrlSegment, ActivatedRouteSnapshot, RouterStateSnapshot, UrlTree } from '@angular/router';
+import {
+  CanActivate,
+  CanActivateChild,
+  CanDeactivate,
+  CanLoad,
+  Route,
+  UrlSegment,
+  ActivatedRouteSnapshot,
+  RouterStateSnapshot,
+  UrlTree,
+  Router
+} from '@angular/router';
 import { Observable } from 'rxjs';
 import {TokenStorageService} from "../utils/token-storage.service";
 
@@ -9,13 +20,18 @@ import {TokenStorageService} from "../utils/token-storage.service";
 export class AuthGuard implements CanActivate, CanActivateChild, CanDeactivate<unknown>, CanLoad {
 
   constructor(
-    private ts: TokenStorageService
+    private ts: TokenStorageService,
+    private router: Router
   ) {}
 
   canActivate(
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
-    return this.ts.tokenExist() && this.ts.tokenIsValid();
+    if(this.ts.tokenExist() && this.ts.tokenIsValid()){
+      return true;
+    }else{
+      this.router.navigateByUrl('/account');
+    }
   }
   canActivateChild(
     next: ActivatedRouteSnapshot,
